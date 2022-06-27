@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>菇菇寶貝</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    canvas {
+      border: 1px solid black;
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="600" height="142" id="canvas"></canvas>
+  <script>
+    const img = new Image();
+    img.src = '菇菇寶貝.png';
+    img.onload = function() {
+      init();
+    }
+
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const x_range = [-40, canvas.width + 40]
+    let s = 0;
+    let frameCount = 0;
+    let currentDirection = 1;
+    let x_offset = 0;
+    const pos = [
+      [0, 0, 124, 113],
+      [0, 113, 134, 142],
+      [134, 113, 134, 142],
+      [134 * 2, 113, 134, 142],
+      [134 * 3, 113, 134, 142],
+      [134 * 4, 113, 134, 142],
+    ];
+    function init() {
+      // 寬度調整
+      canvas.width = window.innerWidth - 2;
+      x_range[1] = canvas.width + 40;
+
+    //   pos.forEach(([x, y, w, h]) => {
+    //     ctx.drawImage(img, x, y, w, h, 0, 0, w, h);
+    //   });
+
+      window.requestAnimationFrame(step);
+    }
+
+    function step() {
+      if (frameCount === 0) {
+        // 50% 轉換方向
+        if (s === 0) {
+          currentDirection = currentDirection * (Math.random() >= 0.5 ? -1 : 1);
+        }
+
+        // 依照方向移動
+        if (x_offset + 124 - currentDirection * 10 <= x_range[1] && x_offset - currentDirection * 10 >= x_range[0]) {
+          x_offset = x_offset - currentDirection * 10;
+        }
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        if (currentDirection === -1) {
+          // 以中上為中心向右翻轉
+          ctx.translate(canvas.width, 0);
+          ctx.scale(-1, 1);
+        }
+
+        const [sprite_x, sprite_y, w, h] = pos[s];
+        ctx.drawImage(
+          img,
+          sprite_x,
+          sprite_y,
+          w,
+          h,
+          currentDirection === -1 ? canvas.width - w - x_offset : x_offset,
+          0,
+          w,
+          h
+        );
+
+        if (currentDirection === -1) {
+          // 以中上為中心向右翻轉
+          ctx.translate(canvas.width, 0);
+          ctx.scale(-1, 1);
+        }
+
+        // 下一個影格
+        s = (s + 1) % pos.length;
+      }
+
+      frameCount = (frameCount + 1) % 11;
+
+      window.requestAnimationFrame(step);
+    }
+  </script>
+</body>
+</html>
