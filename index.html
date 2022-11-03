@@ -1,648 +1,690 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>陳泰澄(Tai-Cheng Chen)</title>
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="bootstrap/3.3.7/css/bootstrap.css">
-	<link rel="stylesheet" href="font-awesome/css/font-awesome.css">
-    <style type="text/css">
-        body {
-            margin: 0 20px;
-        }
-        body > div {
-            margin: 0 20px 0 20px;
-        }
-        .green {
-            color: green;
-        }
-        .chartreuse {
-            color: chartreuse;
-        }
-        .yellow {
-            color: yellow;
-        }
-        .orange {
-            color: orange;
-        }
-        .red {
-            color: red;
-        }
-        .page-header {
-            margin: 10px 0;
-        }
-        .photo {
-            float: right;
-            height: 140px;
-            padding: 1px;
-            border-radius: 3px;
-            background: rgb(200, 200, 200);
-        }
-        .lastModified {
-            font-style: italic;
-            position: absolute;
-            right: 20px;
-            color: dimgrey;
-        }
-        a:link,
-        a:visited {
-            color:#8888FF;
-        }
-        @keyframes rainbow {
-            0% {
-                color: rgb(255, 0, 0);
-            }
-            16.6% {
-                color: rgb(255, 255, 0);
-            }
-            33.3% {
-                color: rgb(0, 255, 0);
-            }
-            50% {
-                color: rgb(0, 255, 255);
-            }
-            66.6% {
-                color: rgb(0, 0, 255);
-            }
-            83.3% {
-                color: rgb(255,0, 255);
-            }
-            100% {
-                color: rgb(255, 0, 0);
-            }
-        }
-        a:hover {
-            animation: rainbow 1s linear infinite;
-        }
-        .indent {
-            margin-left: 40px;
-        }
-        canvas {
-            display: block;
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            width: 400px;
-            height: 400px;
-        }
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-        .progressBar h4 {
-            font-size: 21px;
-            font-size: 1.33em;
-            text-transform: none;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-            margin-bottom: 7px;
-            margin-bottom: .33em;
-        }
+  <!-- start of https://realfavicongenerator.net -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-        .progressBarContainer {
-            width: 100%;
-            max-width: 350px;
-            height: 10px;
-            background: #e6eae3;
-            background: rgba(8,102,220,.2);
-            overflow: hidden;
-            border-radius: 5px;
-        }
+  <title>陳泰澄（TCC）</title>
+  <meta name="author" content="TCC">
+  <meta name="description" content="我是 TCC，生性樂觀、開朗型內向人，喜歡從做中學，靈活運用知識，不墨守成規死讀書，只要是對有興趣的，觀察、吸收力就非常強。
 
-        .progressBarValue {
-            height: 10px;
-            float: left;
-            background: #0866dc;
-            background: rgba(8,102,220,.75);
-        }
+  Hi, I'm TCC, optimistic by nature and an outgoing introvert.
 
-        .value-00 {
-            width: 0;
-            background: black;
-        }
-        .value-10 {
-            width: 10%;
-            background: brown;
-        }
-        .value-20 {
-            width: 20%;
-            background: red;
-        }
-        .value-30 {
-            width: 30%;
-            background: orange;
-        }
-        .value-40 {
-            width: 40%;
-            background: yellow;
-        }
-        .value-50 {
-            width: 50%;
-            background: green;
-        }
-        .value-60 {
-            width: 60%;
-            background: blue;
-        }
-        .value-70 {
-            width: 70%;
-            background: violet;
-        }
-        .value-80 {
-            width: 80%;
-            background: gray;
-        }
-        .value-90 {
-            width: 90%;
-            background: white;
-        }
-        .value-100 {
-            width: 100%;
-            background: gold;
-        }
-    </style>
-    <script>
-        function getAge(dateString) {
-            var today = new Date();
-            var birthDate = new Date(dateString);
-            var age = today.getFullYear() - birthDate.getFullYear();
-            var m = today.getMonth() - birthDate.getMonth();
-            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                age--;
-            }
-            return age;
-        }
-        function lastModified() {
-            var lastModifiedArray = document.lastModified.split(" ")[0].split("/");
-            return lastModifiedArray[2] + "年" + lastModifiedArray[0] + "月" + lastModifiedArray[1] + "日"
-        }
-    </script>
+  I like to learn from practice, use knowledge flexibly, and know how to get out of the frame, and as long as it is information that interests me, it will have excellent observation and absorption power.">
+  <meta name="keywords" content="網站工程師, TCC, PHP">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="🤖 陳泰澄（TCC）">
+  <meta name="twitter:description" content="我是 TCC，生性樂觀、開朗型內向人，喜歡從做中學，靈活運用知識，不墨守成規死讀書，只要是對有興趣的，觀察、吸收力就非常強。
+
+  Hi, I'm TCC, optimistic by nature and an outgoing introvert.
+
+  I like to learn from practice, use knowledge flexibly, and know how to get out of the frame, and as long as it is information that interests me, it will have excellent observation and absorption power.">
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:creator" content="@">
+  <meta name="twitter:image" content="https://tccintaiwan.github.io/TC.png">
+
+  <!-- Open Graph general (Facebook, Pinterest)-->
+  <meta property="og:title" content="🤖 陳泰澄（TCC）">
+  <meta property="og:description" content="我是 TCC，生性樂觀、開朗型內向人，喜歡從做中學，靈活運用知識，不墨守成規死讀書，只要是對有興趣的，觀察、吸收力就非常強。
+
+  Hi, I'm TCC, optimistic by nature and an outgoing introvert.
+
+  I like to learn from practice, use knowledge flexibly, and know how to get out of the frame, and as long as it is information that interests me, it will have excellent observation and absorption power.">
+  <meta property="og:url" content="https://tccintaiwan.github.io/">
+  <meta property="og:site_name" content="tccintaiwan.github.io">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://tccintaiwan.github.io/TC.png">
+  <!-- end of https://realfavicongenerator.net -->
+
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="XR-TYFJb04BBoOSxwjXXD0mkMTDGEKX0V-r5Qa-Nrj0" />
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="bootstrap/3.3.7/css/bootstrap.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+  <style type="text/css">
+    body {
+      margin: 0 20px;
+    }
+    body > div {
+      margin: 0 20px 0 20px;
+    }
+    .green {
+      color: green;
+    }
+    .chartreuse {
+      color: chartreuse;
+    }
+    .yellow {
+      color: yellow;
+    }
+    .orange {
+      color: orange;
+    }
+    .red {
+      color: red;
+    }
+    .page-header {
+      margin: 10px 0;
+    }
+    .photo {
+      float: right;
+      height: 140px;
+      padding: 1px;
+      border-radius: 3px;
+      background: rgb(200, 200, 200);
+    }
+    .lastModified {
+      font-style: italic;
+      position: absolute;
+      right: 20px;
+      color: dimgrey;
+    }
+    a:link,
+    a:visited {
+      color:#8888FF;
+    }
+    @keyframes rainbow {
+      0% {
+        color: rgb(255, 0, 0);
+      }
+      16.6% {
+        color: rgb(255, 255, 0);
+      }
+      33.3% {
+        color: rgb(0, 255, 0);
+      }
+      50% {
+        color: rgb(0, 255, 255);
+      }
+      66.6% {
+        color: rgb(0, 0, 255);
+      }
+      83.3% {
+        color: rgb(255,0, 255);
+      }
+      100% {
+        color: rgb(255, 0, 0);
+      }
+    }
+    a:hover {
+      animation: rainbow 1s linear infinite;
+    }
+    .indent {
+      margin-left: 40px;
+    }
+    canvas {
+      display: block;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      width: 400px;
+      height: 400px;
+    }
+
+    .progressBar h4 {
+      font-size: 21px;
+      font-size: 1.33em;
+      text-transform: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      margin-bottom: 7px;
+      margin-bottom: .33em;
+    }
+
+    .progressBarContainer {
+      width: 100%;
+      max-width: 350px;
+      height: 10px;
+      background: #e6eae3;
+      background: rgba(8,102,220,.2);
+      overflow: hidden;
+      border-radius: 5px;
+    }
+
+    .progressBarValue {
+      height: 10px;
+      float: left;
+      background: #0866dc;
+      background: rgba(8,102,220,.75);
+    }
+
+    .value-00 {
+      width: 0;
+      background: black;
+    }
+    .value-10 {
+      width: 10%;
+      background: brown;
+    }
+    .value-20 {
+      width: 20%;
+      background: red;
+    }
+    .value-30 {
+      width: 30%;
+      background: orange;
+    }
+    .value-40 {
+      width: 40%;
+      background: yellow;
+    }
+    .value-50 {
+      width: 50%;
+      background: green;
+    }
+    .value-60 {
+      width: 60%;
+      background: blue;
+    }
+    .value-70 {
+      width: 70%;
+      background: violet;
+    }
+    .value-80 {
+      width: 80%;
+      background: gray;
+    }
+    .value-90 {
+      width: 90%;
+      background: white;
+    }
+    .value-100 {
+      width: 100%;
+      background: gold;
+    }
+  </style>
+  <script>
+    function getAge(dateString) {
+      var today = new Date();
+      var birthDate = new Date(dateString);
+      var age = today.getFullYear() - birthDate.getFullYear();
+      var m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      return age;
+    }
+    function lastModified() {
+      var lastModifiedArray = document.lastModified.split(" ")[0].split("/");
+      return lastModifiedArray[2] + "年" + lastModifiedArray[0] + "月" + lastModifiedArray[1] + "日"
+    }
+  </script>
 </head>
 <body>
-    <header class="lastModified"><script>document.write("更新日期： " + lastModified() + "");</script></header>
-	<div class="page-header">
-        <h1><span class="glyphicon glyphicon-user"></span>履歷表<small >Resume</small></h1>
-	</div>
-	<div class="panel panel-success">
-		<div class="panel-heading">
-			<h4><i class="fa fa-info-circle fa-1x"></i>基本資料(Profile)</h4>
-		</div>
-		<div class="panel-body text-primary">
-			名字(Name)： 陳泰澄(Tai-Cheng Chen)<a href="photo.jpg" target="_blank"><img src="photo.jpg" alt="" class="photo"></a><br>
-            年次(Years): 1995 年<script>document.write("(" + getAge("1995-03-02") + " 歲)");</script><br>
-            性別(Gender): 男生 ♂<br>
-            身高(Height): 164 cm<br>
-            體重(Weight): 55 kg<br>
-            兵役(Military): 役畢<br>
-		</div>
-	</div>
-	<div class="panel panel-success">
-		<div class="panel-heading">
-			<h4><i class="fa fa-graduation-cap"></i>學歷(Education)</h4>
-		</div>
-		<div class="panel-body text-primary">
-			國立高雄應用科技大學 資訊工程系
-			B.S., Computer Science and Information Engineering, 2013 -<!-- Expected --> 2017, National Kaohsiung University of Applied Sciences, Kaohsiung<br>
-            國立員林崇實高級工業職業學校 資訊科
-            Department of Computer ScienceNational, 2010 - 2013, Yuanlin ChungShih Industrial Vocational High School, Yuanlin<br>
-		</div>
-	</div>
-	<div class="panel panel-success">
-		<div class="panel-heading">
-			<h4><i class="fa fa-briefcase"></i>工作經歷(Work Experience)</h4>
-		</div>
-		<div class="panel-body text-primary">
-            天宇資訊股份有限公司 Deputy Engineer April,2018 - ?<br>
-            國立高雄應用科技大學 資訊工程系 Natural Computing Lab Assistant October,2014 - August,2017<br>
-            國立高雄應用科技大學 資訊工程系 課程諮詢委員 August 1,2016 - July 31,2017<br>
-            國立高雄應用科技大學 資訊工程系網 網管 July 1,2015 - October,2015<br>
-			國立高雄應用科技大學 資訊工程系 張雲龍主任 Adjunct Assistant September,2013 - July,2015<br>
-            國立高雄應用科技大學 資訊工程系系辦 Part-time Worker March,2015 - Jun 30,2015<br>
-            大山電子 Part-time Worker Jauuary,2015 - February,2015<br>
-            國立高雄應用科技大學 資訊工程系系辦 Part-time Worker Setember,2014 - January,2015<br>
-		</div>
-	</div>
-	<div class="panel panel-success">
-		<div class="panel-heading">
-			<h4><i class="fa fa-magic"></i>專業技能(Professional Skills)</h4>
-		</div>
-		<div class="panel-body text-primary">
-            <strong>語言 (Languages)</strong><br>
-            <!-- <div style="width: 400px;height:400px;"><canvas id="myChart" class="indent"></canvas></div> -->
-            <p class="indent">
-                中文 75%<br>
-                English 30%<br>
-                臺語 40%<br>
-                <!-- 日語 5%<br>
-                韓語 3%<br> -->
-            </p>
-			<strong>證照 (Certificates or Licenses)</strong><br>
-            <p class="indent">
-                硬體裝修乙級<br>
-                網頁設計丙級<br>
-            </p>
-
-			<strong>專業能力 (Special Abilities)</strong><br>
-            <!-- <p class="indent">
-                ☆☆<span class="yellow">★★★</span> Python<br>
-                ☆☆<span class="yellow">★★★</span> Javascript<br>
-                ☆☆<span class="yellow">★★★</span> PHP<br>
-                ☆☆<span class="yellow">★★★</span> HTML/CSS<br>
-                ☆☆<span class="yellow">★★★</span> VB 6<br>
-                ☆☆☆<span class="orange">★★</span> C<br>
-                ☆☆☆<span class="orange">★★</span> 組合語言<br>
-                ☆☆☆☆<span class="red">★</span> C#<br>
-                ☆☆☆☆<span class="red">★</span> Arduino<br>
-                ☆☆☆☆<span class="red">★</span> C++<br>
-                ☆☆☆☆<span class="red">★</span> Java<br>
-                ☆☆☆☆<span class="red">★</span> Android Studio<br>
-            </p> -->
-            <div class="indent">
-                <div class="progressBar">
-                    <b>PHP</b>
-                    <div class="progressBarContainer">
-                        <div class="progressBarValue value-60"></div>
-                    </div>
-                </div>
-                <div class="progressBar">
-                    <b>Javascript</b>
-                    <div class="progressBarContainer">
-                        <div class="progressBarValue value-60"></div>
-                    </div>
-                </div>
-                <div class="progressBar">
-                    <b>Python</b>
-                    <div class="progressBarContainer">
-                        <div class="progressBarValue value-50"></div>
-                    </div>
-                </div>
-                <div class="progressBar">
-                    <b>HTML/CSS</b>
-                    <div class="progressBarContainer">
-                        <div class="progressBarValue value-50"></div>
-                    </div>
-                </div>
-                <div class="progressBar">
-                    <b>VB 6</b>
-                    <div class="progressBarContainer">
-                        <div class="progressBarValue value-50"></div>
-                    </div>
-                </div>
-                <div class="progressBar">
-                    <b>bash</b>
-                    <div class="progressBarContainer">
-                        <div class="progressBarValue value-50"></div>
-                    </div>
-                </div>
-                <div class="progressBar">
-                    <b>C</b>
-                    <div class="progressBarContainer">
-                        <div class="progressBarValue value-40"></div>
-                    </div>
-                </div>
-                <div class="progressBar">
-                    <b>Docker</b>
-                    <div class="progressBarContainer">
-                        <div class="progressBarValue value-30"></div>
-                    </div>
-                </div>
-                <div class="progressBar">
-                    <b>組合語言</b>
-                    <div class="progressBarContainer">
-                        <div class="progressBarValue value-30"></div>
-                    </div>
-                </div>
-                <div class="progressBar">
-                    <b>C#</b>
-                    <div class="progressBarContainer">
-                        <div class="progressBarValue value-30"></div>
-                    </div>
-                </div>
-                <div class="progressBar">
-                    <b>Arduino</b>
-                    <div class="progressBarContainer">
-                        <div class="progressBarValue value-20"></div>
-                    </div>
-                </div>
-                <div class="progressBar">
-                    <b>C++</b>
-                    <div class="progressBarContainer">
-                        <div class="progressBarValue value-20"></div>
-                    </div>
-                </div>
-                <div class="progressBar">
-                    <b>Java</b>
-                    <div class="progressBarContainer">
-                        <div class="progressBarValue value-20"></div>
-                    </div>
-                </div>
-                <div class="progressBar">
-                    <b>Android Studio</b>
-                    <div class="progressBarContainer">
-                        <div class="progressBarValue value-10"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="row my-4">
-                <h4 class="col-md-2 prog-lang">C</h4>
-                <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">我懂不少！ (80%)</div>
-                    </div>
-                </div>
-
-                <h4 class="col-md-2 prog-lang">C++</h4>
-                <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">可以寫一些玩具 (50%)</div>
-                    </div>
-                </div>
-
-                <h4 class="col-md-2 prog-lang">C#</h4>
-                <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">可以教別人 (70%)</div>
-                    </div>
-                </div>
-
-                <h4 class="col-md-2 prog-lang">Java</h4>
-                <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">我準備好了！ (85%)</div>
-                    </div>
-                </div>
-
-                <h4 class="col-md-2 prog-lang">Rust</h4>
-                <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">可以寫一些玩具 (50%)</div>
-                    </div>
-                </div>
-
-                <h4 class="col-md-2 prog-lang">Python</h4>
-                <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">嫩 (30%)</div>
-                    </div>
-                </div>
-
-                <h4 class="col-md-2 prog-lang">Javascript</h4>
-                <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%">嫩 (25%)</div>
-                    </div>
-                </div>
-            </div> -->
-		</div>
-	</div>
-    <div class="panel panel-success">
-        <div class="panel-heading">
-            <h4><i class="fa fa-star"></i>校園活動(Campus Activities)</h4>
-        </div>
-        <div class="panel-body text-primary">
-            跑酷社 社員<br>
-            資訊研習社  社員<br>
-            高雄應用科技大學資工系 國企 x 資工 x 資管 聯合暑期訓練 服務組<br>
-            高雄應用科技大學資工系 資工活力學術週 工作人員<br>
-            高雄應用科技大學資工系 十年一刻資工資夜 工作人員<br>
-            高雄應用科技大學資工系 會計 x 資工 x 企管聯合迎新晚會 活動組<br>
-            高雄應用科技大學資工系 會計 x 資工 x 企管三系聯合迎新茶會 活動組<br>
-            高雄應用科技大學資工系 新生體驗營活動組<br>
-            高雄應用科技大學資工系 南區社團嘉年華 工作人員<br>
-            高雄應用科技大學資工系 電腦研習營 活動組<br>
-            高雄應用科技大學 卡拉 OK 大賽 活動組<br>
-            高雄應用科技大學資工系 高職參訪 接待工作人員<br>
-            國立高雄應用科技大學 50 周年校慶活動 日間部男生組 1500 公尺 5 分 27 秒 917 毫秒<br>
-        </div>
+  <header class="lastModified"><script>document.write("更新日期： " + lastModified() + "");</script></header>
+  <div class="page-header">
+    <h1><span class="glyphicon glyphicon-user"></span>履歷表<small >Resume</small></h1>
+  </div>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h4><i class="fa fa-info-circle fa-1x"></i>基本資料(Profile)</h4>
     </div>
-    <div class="panel panel-success">
-        <div class="panel-heading">
-            <h4><i class="fa fa-star"></i>班級幹部(Class Officers)</h4>
-        </div>
-        <div class="panel-body text-primary">
-            服務股長 105 學年 上學期<br>
-            衛生股長 104 學年 上學期<br>
-            服務股長 103 學年 上學期<br>
-        </div>
+    <div class="panel-body text-primary">
+      名字(Name)： 陳泰澄(Tai-Cheng Chen)<a href="photo.jpg" target="_blank"><img src="photo.jpg" alt="" class="photo"></a><br>
+      年次(Years): 1995 年<script>document.write("(" + getAge("1995-03-02") + " 歲)");</script><br>
+      性別(Gender): 男生 ♂<br>
+      身高(Height): 164 cm<br>
+      體重(Weight): 55 kg<br>
+      兵役(Military): 役畢<br>
     </div>
-	<div class="panel panel-success">
-		<div class="panel-heading">
-			<h4><i class="fa fa-heart"></i>個人興趣(Personal Interests)</h4>
-		</div>
-		<div class="panel-body text-primary">
-            聽音樂<br>
-            看電影<br>
-            玩遊戲<br>
-            寫小程式<br>
-		</div>
-	</div>
-	<div class="panel panel-success">
-		<div class="panel-heading">
-			<h4><i class="fa fa-briefcase"></i>作品集(Personal Portfolio)</h4>
-		</div>
-		<div class="panel-body text-primary">
-            小工具
-            [ <a href="https://github.com/TCCinTaiwan/TcTools" target="_blank"><i class="fa fa-github"></i> TcTools</a> ]
-            [ <a href="https://tccintaiwan.github.io/TcTools/#/" target="_blank"><i class="fa fa-html5"></i> TcTools</a> ]<br>
-            檔案管理系統
-            [ <a href="https://github.com/TCCinTaiwan/TcStorage" target="_blank"><i class="fa fa-github"></i> TcStorage</a> ]
-            [ <a href="demo/TcStorage.png" target="_blank"><i class="fa fa-photo"></i> TcStorage</a> ]<br>
-            倉庫番
-            [ <a href="https://github.com/TCCinTaiwan/PygameSokoban" target="_blank"><i class="fa fa-github"></i> PygameSokoban</a> ]
-            [ <a href="demo/PygameSokoban.png" target="_blank"><i class="fa fa-photo"></i> PygameSokoban</a> ]<br>
-            網頁版 會員訓練系統
-            [ <a href="https://github.com/TCCinTaiwan/TcTube" target="_blank"><i class="fa fa-github"></i> TcTube</a> ]<br>
-            電源插座控制電路
-            [ <a href="https://drive.google.com/file/d/0B0Xv5bNLGK-keUNLbnhjblhYM3M/view?usp=sharing" target="_blank"><i class="fa fa-file-pdf-o"></i> pdf</a> ]
-            [ <a href="https://drive.google.com/file/d/0B0Xv5bNLGK-kLXZldk9ocjN2a1E/view?usp=sharing" target="_blank"><i class="fa fa-video-camera"></i> 電路影片</a> ]<br>
-            繪圖板
-            [ <a href="https://github.com/TCCinTaiwan/White-Brain" target="_blank"><i class="fa fa-github"></i> White's Brain</a> ]<br>
-            圍棋
-            [ <a href="demo/go/" target="_blank"><i class="fa fa-html5"></i> Go</a> ]<br>
-            直棋
-            [ <a href="demo/morris/" target="_blank"><i class="fa fa-html5"></i> Morris</a> ]<br>
-            貪吃蛇
-            [ <a href="demo/snake/" target="_blank"><i class="fa fa-html5"></i> Snake</a> ]<br>
-            綠水靈
-            [ <a href="demo/slime/" target="_blank"><i class="fa fa-html5"></i> Slime</a> ]<br>
-            菇菇寶貝
-            [ <a href="demo/菇菇寶貝/" target="_blank"><i class="fa fa-html5"></i> 菇菇寶貝</a> ]<br>
-			FTP Client
-            [ <a href="demo/TccFTP.png" target="_blank"><i class="fa fa-photo"></i> TccFTP</a> ]<br>
-            MP3播放器
-            [ <a href="demo/MP3播放器.png" target="_blank"><i class="fa fa-photo"></i> MP3 播放器</a> ]<br>
-            五子棋
-            [ <a href="demo/五子棋.png" target="_blank"><i class="fa fa-photo"></i> 五子棋</a> ]<br>
-            俄羅斯方塊
-            [ <a href="demo/Battle絕對.png" target="_blank"><i class="fa fa-photo"></i> Battle 絕對</a> ]<br>
-            聊天室
-            [ <a href="demo/VaulterEpoch.png" target="_blank"><i class="fa fa-photo"></i> VaulterEpoch</a> ]
-            [ <a href="demo/VaulterEpochServer.png" target="_blank"><i class="fa fa-photo"></i> VaulterEpochServer</a> ]<br>
-            暗棋
-            [ <a href="demo/暗棋無雙.png" target="_blank"><i class="fa fa-photo"></i> 暗棋無雙</a> ]<br>
-            桌面歌詞
-            [ <a href="demo/TcPlayer.png" target="_blank"><i class="fa fa-photo"></i> TcPlayer</a> ]<br>
-            踩地雷
-            [ <a href="demo/步步兢辛.png" target="_blank"><i class="fa fa-photo"></i> 步步兢辛</a> ]<br>
-		</div>
-	</div>
-    <div class="panel panel-success">
-        <div class="panel-heading">
-            <h4><i class="fa fa-thumbs-o-up"></i>自傳(Autobiography)</h4>
-        </div>
-        <div class="panel-body text-primary">
-            <p>我叫陳泰澄，彰化人，生性樂觀、活潑開朗，喜歡從做中學，靈活運用知識，不墨守成規死讀書，只要是對有興趣的，吸收力就非常強。</p>
-            <strong>家庭概況</strong><br>
-            <p class="indent">
-                家中有五人，包含父母親、兩個姊姊和我。父親從事過工程師及導遊，每次要求我們要做到甚麼時，都會以身作則；母親自從生下二姊以後，便開始從事家庭主婦，打點家中大小事；兩個姐姐現在都已經進入社會工作，幫忙支撐家計。</br>
-            </p>
-            <strong>成長及學習過程</strong><br>
-            <p class="indent">
-                小時候，因為家中沒有電視，所以平常休閒時會看看書，可以一整天都在讀同一本書，那時家中有台 Windows 2000 的電腦，常常壞掉，我也就常常自己嘗試著修理、重灌，真的解決不了就會上網發問、跑到書局查閱書籍或去圖書館查相關資料，也因此我對電腦相關的事也就非常有興趣，並對 Visual Basic、C、JAVA、3DS MAX、網頁語法和組合語言也都有特別的興趣，經常會嘗試寫一些別人認為現在能力做不出來的東西。</br>
-                高職時實習成績也還算不錯，曾代表科上參加工科賽，雖說比賽成績不甚理想，覺得有點對不起那些實習成績也不錯的同學，不過也激勵了我努力拚統測。</br>
-            </p>
-            <strong>社團</strong><br>
-            <p class="indent">
-                就讀高職時，我在學校參加了 LEGO 機器人研究社，是社團中的活躍人物，常常下課後就一直待到晚上 10 點、11 點，曾代表學校參加 WRO 校際盃、中區賽、全國賽，皆獲得不錯的成績，最滿意的一次是在 WRO 2012 中區賽以 0.36 秒的成績差距拿下了第二名。</br>
-                大一時期，我開始轉而參加資工系系上活動，繼續向人生中，新一個階段邁進，從一年級開始就積極參加系上活動，更在一下的暑假參加了新生體驗營的活動組，充實了大一升大二的暑假，隔年我則是參加服務組。</br>
-                我直到大三才有參加社團，因為原本沒足夠喜歡的社團，而大三那年我們班有同學開始籌辦資訊研習社，我就毅然加入，成為了傳說中的第零屆社員，之後又陰錯陽差了參加一學期的跑酷社。</br>
-            </p>
-            <strong>班級幹部</strong><br>
-            <p class="indent">
-                在高職時，我擔任了三任副班長，積極處理班上事務。</br>
-                大學則是當了兩任服務股長，一任的衛生股長。</br>
-            </p>
-            <strong>工讀</strong><br>
-            <p class="indent">
-                本人就讀於高雄應用科技大學，資訊工程系，在系辦擔任工讀生，對於份內工作認真負責，也時常善用職務幫忙同學處理一些事務。</br>
-                大二寒假則是去電子材料行打工。</br>
-            </p>
-            <strong>實作</strong><br>
-            <p class="indent">
-                國中升高職時我基於興趣填了資訊科，那時我開始接觸到網頁以外的程式語言，那時候 Facebook 上流行著 Battle(俄羅斯方塊)，我就在高一的時候寫了一個俄羅斯方塊，並參考網路上的方法把它改成了連線板，我也就開始對程式產生了興趣，後來陸陸續續有寫一些程式，像是踩地雷、聊天室、五子棋、FTP客戶端。</br>
-                </br>
-                大二時，參加系上網頁程式設計比賽，很幸運的獲得第一名，其中花最多時間作的是其中的檔案管理系統
-                [ <a href="https://github.com/TCCinTaiwan/file-manager" target="_blank"><i class="fa fa-github"></i> file-manager</a> ]
-                ，利用大一所學的 php 搭配之前寫 Ftp 客戶端的經驗，組合成一個具基本檔案管理的網頁。</br>
-                因為在系辦工讀的原因，隔年被問要不要改寫系網，於是乎我就當了幾個月的系網網管，我最後是以 Wordpress 為底
-                [ <a href="https://github.com/TCCinTaiwan/KUAS_CSIE_Wordpress_Themes_TCC-Department" target="_blank"><i class="fa fa-github"></i> KUAS_CSIE_Wordpress_Themes_TCC-Department</a> ]
-                ，支援語言切換，而在那之前有先用 CodeIgniter 寫過一個先行版
-                [ <a href="https://github.com/TCCinTaiwan/kuas-csie" target="_blank"><i class="fa fa-github"></i> kuas-csie</a> ]
-                ，但基於安全考量，還是決定用 Wordpress。</br>
-                </br>
-                大三上學期後半，和高第一同學合作，做一個用 Arduino 控制的電源插座。</br>
-                [ <a href="https://drive.google.com/file/d/0B0Xv5bNLGK-keUNLbnhjblhYM3M/view?usp=sharing" target="_blank"><i class="fa fa-file-pdf-o"></i> pdf</a> ]
-                [ <a href="https://drive.google.com/file/d/0B0Xv5bNLGK-kLXZldk9ocjN2a1E/view?usp=sharing" target="_blank"><i class="fa fa-video-camera"></i> 電路影片</a> ]</br>
-                寒假結束後我參加資研社兩天的 Hackathon ，用 Python(後台) + Html5 刻一個線上電子白板
-                [ <a href="https://github.com/TCCinTaiwan/White-Brain" target="_blank"><i class="fa fa-github"></i> White-Brain</a> ]
-                ，基本畫線、拉直線、直線預覽、上／下一步等等。</br>
-                </br>
-                大三升大四在學校實習，做了一個網頁版會員訓練系統
-                [ <a href="https://github.com/TCCinTaiwan/TcTube" target="_blank"><i class="fa fa-github"></i> TcTube</a> ]
-                ，主要都在研究 HTML5 影片播放。</br>
-                大四上修 Pygame 期末作業，做了一個倉庫番遊戲
-                [ <a href="https://github.com/TCCinTaiwan/PygameSokoban" target="_blank"><i class="fa fa-github"></i> PygameSokoban</a> ]
-                ，除了一般正常的推箱子，還可以用滑鼠控制。</br>
-                大四下則是在 Android 課程中做了終極井字棋
-                <!-- [ <a href="" target="_blank"><i class="fa fa-github"></i> UltimateTicTacToe</a> ] -->
-                ，而我們採用的勝利條件是用佔領下來的地盤在大的九宮格連成一條線，一局大約 15 分鐘到半小時。</br>
-                而快畢業時，我有接一家同學介紹的花店網站 Case
-                <!-- [ <a href="" target="_blank"><i class="fa fa-github"></i> JKFlower</a> ] -->
-                ，是一般的購物車網站，但我不大會用最後付款取貨的部分。</br>
-                </br>
-                畢業後，在等入伍前我也重構了大一寫的檔案管理系統
-                [ <a href="https://github.com/TCCinTaiwan/TcStorage" target="_blank"><i class="fa fa-github"></i> TcStorage</a> ]
-                ，而當兵時也有被拉去出資訊公差，幫忙灌電腦、拉電話網路線、設定網路等等，多學了一兩招網管技能。</br>
-            </p>
-            <strong>進入社會</strong><br>
-            <p class="indent">
-                當完兵後，很幸運在間隔不久就收到面試邀約，而同時因為當兵前去上的駕訓班，課還沒上完，所以我只能 4 月初才進公司。與此同時，與我同梯的朋友也找我去幫他們家改寫網頁，我試著寫了，但寫起來不大順利，加上開始工作了之後，就只能假日再去做，中途網頁似乎離能用還有些距離，最後採用到的就只有一點點 SEO。至於公司部分，感謝主管，三個月新訓，訓好訓滿，學了一些我在學校根本沒動力碰的技術，像是 Docker、symfony，也更完整的學了一次版控，也比較正式的看了一次 PSR-2。</br>
-            </p>
-        </div>
+  </div>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h4><i class="fa fa-graduation-cap"></i>學歷(Education)</h4>
     </div>
-	<!-- <div class="panel panel-success">
-		<div class="panel-heading">
-			<h4><i class="fa fa-thumbs-o-up"></i>推薦人(References)</h4>
-		</div>
-		<div class="panel-body text-primary">
+    <div class="panel-body text-primary">
+      國立高雄應用科技大學 資訊工程系
+      B.S., Computer Science and Information Engineering, 2013 -<!-- Expected --> 2017, National Kaohsiung University of Applied Sciences, Kaohsiung<br>
+      國立員林崇實高級工業職業學校 資訊科
+      Department of Computer ScienceNational, 2010 - 2013, Yuanlin ChungShih Industrial Vocational High School, Yuanlin<br>
+    </div>
+  </div>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h4><i class="fa fa-briefcase"></i>工作經歷(Work Experience)</h4>
+    </div>
+    <div class="panel-body text-primary">
+      天宇資訊股份有限公司 Deputy Engineer April,2018 - ?<br>
+      國立高雄應用科技大學 資訊工程系 Natural Computing Lab Assistant October,2014 - August,2017<br>
+      國立高雄應用科技大學 資訊工程系 課程諮詢委員 August 1,2016 - July 31,2017<br>
+      國立高雄應用科技大學 資訊工程系網 網管 July 1,2015 - October,2015<br>
+      國立高雄應用科技大學 資訊工程系 張雲龍主任 Adjunct Assistant September,2013 - July,2015<br>
+      國立高雄應用科技大學 資訊工程系系辦 Part-time Worker March,2015 - Jun 30,2015<br>
+      大山電子 Part-time Worker Jauuary,2015 - February,2015<br>
+      國立高雄應用科技大學 資訊工程系系辦 Part-time Worker Setember,2014 - January,2015<br>
+    </div>
+  </div>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h4><i class="fa fa-magic"></i>專業技能(Professional Skills)</h4>
+    </div>
+    <div class="panel-body text-primary">
+      <strong>語言 (Languages)</strong><br>
+      <!-- <div style="width: 400px;height:400px;"><canvas id="myChart" class="indent"></canvas></div> -->
+      <p class="indent">
+        中文 75%<br>
+        English 30%<br>
+        臺語 40%<br>
+        <!-- 日語 5%<br>
+        韓語 3%<br> -->
+      </p>
+      <strong>證照 (Certificates or Licenses)</strong><br>
+      <p class="indent">
+        硬體裝修乙級<br>
+        網頁設計丙級<br>
+      </p>
 
-		</div>
-	</div> -->
-	<div class="panel panel-success">
-		<div class="panel-heading">
-			<h4><i class="fa fa-thumbs-o-up"></i>聯絡方式(Contact)</h4>
-		</div>
-		<div class="panel-body text-primary">
-            <i class="fa fa-github"></i> Github: <a href="https://github.com/TCCinTaiwan" target="_blank">TCCinTaiwan</a><br>
-            <i class="fa fa-envelope-o"></i> E-Mail: <a href="mailto:john987john987@gmail.com" target="_blank">john987john987@gmail.com</a><br>
-			<i class="fa fa-phone"></i> Cell Phone: 0978-038-566<br>
-		</div>
+      <strong>專業能力 (Special Abilities)</strong><br>
+      <!-- <p class="indent">
+        ☆☆<span class="yellow">★★★</span> Python<br>
+        ☆☆<span class="yellow">★★★</span> Javascript<br>
+        ☆☆<span class="yellow">★★★</span> PHP<br>
+        ☆☆<span class="yellow">★★★</span> HTML/CSS<br>
+        ☆☆<span class="yellow">★★★</span> VB 6<br>
+        ☆☆☆<span class="orange">★★</span> C<br>
+        ☆☆☆<span class="orange">★★</span> 組合語言<br>
+        ☆☆☆☆<span class="red">★</span> C#<br>
+        ☆☆☆☆<span class="red">★</span> Arduino<br>
+        ☆☆☆☆<span class="red">★</span> C++<br>
+        ☆☆☆☆<span class="red">★</span> Java<br>
+        ☆☆☆☆<span class="red">★</span> Android Studio<br>
+      </p> -->
+      <div class="indent">
+        <div class="progressBar">
+          <b>PHP</b>
+          <div class="progressBarContainer">
+            <div class="progressBarValue value-60"></div>
+          </div>
+        </div>
+        <div class="progressBar">
+          <b>Javascript</b>
+          <div class="progressBarContainer">
+            <div class="progressBarValue value-60"></div>
+          </div>
+        </div>
+        <div class="progressBar">
+          <b>Python</b>
+          <div class="progressBarContainer">
+            <div class="progressBarValue value-50"></div>
+          </div>
+        </div>
+        <div class="progressBar">
+          <b>HTML/CSS</b>
+          <div class="progressBarContainer">
+            <div class="progressBarValue value-50"></div>
+          </div>
+        </div>
+        <div class="progressBar">
+          <b>VB 6</b>
+          <div class="progressBarContainer">
+            <div class="progressBarValue value-50"></div>
+          </div>
+        </div>
+        <div class="progressBar">
+          <b>bash</b>
+          <div class="progressBarContainer">
+            <div class="progressBarValue value-50"></div>
+          </div>
+        </div>
+        <div class="progressBar">
+          <b>C</b>
+          <div class="progressBarContainer">
+            <div class="progressBarValue value-40"></div>
+          </div>
+        </div>
+        <div class="progressBar">
+          <b>Docker</b>
+          <div class="progressBarContainer">
+            <div class="progressBarValue value-30"></div>
+          </div>
+        </div>
+        <div class="progressBar">
+          <b>組合語言</b>
+          <div class="progressBarContainer">
+            <div class="progressBarValue value-30"></div>
+          </div>
+        </div>
+        <div class="progressBar">
+          <b>C#</b>
+          <div class="progressBarContainer">
+            <div class="progressBarValue value-30"></div>
+          </div>
+        </div>
+        <div class="progressBar">
+          <b>Arduino</b>
+          <div class="progressBarContainer">
+            <div class="progressBarValue value-20"></div>
+          </div>
+        </div>
+        <div class="progressBar">
+          <b>C++</b>
+          <div class="progressBarContainer">
+            <div class="progressBarValue value-20"></div>
+          </div>
+        </div>
+        <div class="progressBar">
+          <b>Java</b>
+          <div class="progressBarContainer">
+            <div class="progressBarValue value-20"></div>
+          </div>
+        </div>
+        <div class="progressBar">
+          <b>Android Studio</b>
+          <div class="progressBarContainer">
+            <div class="progressBarValue value-10"></div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row my-4">
+        <h4 class="col-md-2 prog-lang">C</h4>
+        <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">我懂不少！ (80%)</div>
+          </div>
+        </div>
+
+        <h4 class="col-md-2 prog-lang">C++</h4>
+        <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">可以寫一些玩具 (50%)</div>
+          </div>
+        </div>
+
+        <h4 class="col-md-2 prog-lang">C#</h4>
+        <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">可以教別人 (70%)</div>
+          </div>
+        </div>
+
+        <h4 class="col-md-2 prog-lang">Java</h4>
+        <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">我準備好了！ (85%)</div>
+          </div>
+        </div>
+
+        <h4 class="col-md-2 prog-lang">Rust</h4>
+        <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">可以寫一些玩具 (50%)</div>
+          </div>
+        </div>
+
+        <h4 class="col-md-2 prog-lang">Python</h4>
+        <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">嫩 (30%)</div>
+          </div>
+        </div>
+
+        <h4 class="col-md-2 prog-lang">Javascript</h4>
+        <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%">嫩 (25%)</div>
+          </div>
+        </div>
+      </div> -->
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="bootstrap/3.3.7/js/bootstrap.js"></script>
-    <script>
-        // 區塊收縮
-        $(".panel-heading").on("click", function(){
-            this.nextElementSibling.hidden = !this.nextElementSibling.hidden;
-        });
-    </script>
-    <!-- <script src="Chart.js/2.6.0/Chart.bundle.js"></script>
-    <script src="Chart.js/2.6.0/Chart.js"></script>
-    <script>
-        var ctx = document.getElementById("myChart");
-        var myRadarChart = new Chart(ctx, {
-            type: 'radar',
-            data: {
-                labels: [
-                    '中文',
-                    'English',
-                    '日本語',
-                    '한국어',
-                    '臺語'
-                ],
-                datasets: [{
-                    label: "陳泰澄",
-                    fill: true,
-                    backgroundColor: "rgba(54, 162, 235, 0.2)",
-                    borderColor: "rgb(54, 162, 235)",
-                    pointBackgroundColor: "rgb(54, 162, 235)",
-                    pointBorderColor: "#fff",
-                    pointHoverBackgroundColor: "#fff",
-                    pointHoverBorderColor: "rgb(54, 162, 235)",
-                    data: [
-                        75,
-                        30,
-                        5,
-                        3,
-                        45
-                    ]
-                }]
-            },
-            options: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: false,
-                    text: '語言能力'
-                },
-                elements: {
-                    point: {
-                        radius: 5
-                    },
-                    line: {
-                        tension: 0,
-                        borderWidth: 2
-                    }
-                },
-                scale: {
-                    ticks: {
-                        beginAtZero: true,
-                        steps: 5,
-                        stepValue: 20,
-                        min: 0,
-                        max: 100
-                    }
-                },
-            }
-        });
-    </script> -->
+  </div>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h4><i class="fa fa-star"></i>校園活動(Campus Activities)</h4>
+    </div>
+    <div class="panel-body text-primary">
+      跑酷社 社員<br>
+      資訊研習社  社員<br>
+      高雄應用科技大學資工系 國企 x 資工 x 資管 聯合暑期訓練 服務組<br>
+      高雄應用科技大學資工系 資工活力學術週 工作人員<br>
+      高雄應用科技大學資工系 十年一刻資工資夜 工作人員<br>
+      高雄應用科技大學資工系 會計 x 資工 x 企管聯合迎新晚會 活動組<br>
+      高雄應用科技大學資工系 會計 x 資工 x 企管三系聯合迎新茶會 活動組<br>
+      高雄應用科技大學資工系 新生體驗營活動組<br>
+      高雄應用科技大學資工系 南區社團嘉年華 工作人員<br>
+      高雄應用科技大學資工系 電腦研習營 活動組<br>
+      高雄應用科技大學 卡拉 OK 大賽 活動組<br>
+      高雄應用科技大學資工系 高職參訪 接待工作人員<br>
+      國立高雄應用科技大學 50 周年校慶活動 日間部男生組 1500 公尺 5 分 27 秒 917 毫秒<br>
+    </div>
+  </div>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h4><i class="fa fa-star"></i>班級幹部(Class Officers)</h4>
+    </div>
+    <div class="panel-body text-primary">
+      服務股長 105 學年 上學期<br>
+      衛生股長 104 學年 上學期<br>
+      服務股長 103 學年 上學期<br>
+    </div>
+  </div>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h4><i class="fa fa-heart"></i>個人興趣(Personal Interests)</h4>
+    </div>
+    <div class="panel-body text-primary">
+      聽音樂<br>
+      看電影<br>
+      玩遊戲<br>
+      寫小程式<br>
+    </div>
+  </div>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h4><i class="fa fa-briefcase"></i>作品集(Personal Portfolio)</h4>
+    </div>
+    <div class="panel-body text-primary">
+      小工具
+      [ <a href="https://github.com/TCCinTaiwan/TcTools" target="_blank"><i class="fa fa-github"></i> TcTools</a> ]
+      [ <a href="https://tccintaiwan.github.io/TcTools/#/" target="_blank"><i class="fa fa-html5"></i> TcTools</a> ]<br>
+      檔案管理系統
+      [ <a href="https://github.com/TCCinTaiwan/TcStorage" target="_blank"><i class="fa fa-github"></i> TcStorage</a> ]
+      [ <a href="demo/TcStorage.png" target="_blank"><i class="fa fa-photo"></i> TcStorage</a> ]<br>
+      倉庫番
+      [ <a href="https://github.com/TCCinTaiwan/PygameSokoban" target="_blank"><i class="fa fa-github"></i> PygameSokoban</a> ]
+      [ <a href="demo/PygameSokoban.png" target="_blank"><i class="fa fa-photo"></i> PygameSokoban</a> ]<br>
+      網頁版 會員訓練系統
+      [ <a href="https://github.com/TCCinTaiwan/TcTube" target="_blank"><i class="fa fa-github"></i> TcTube</a> ]<br>
+      電源插座控制電路
+      [ <a href="https://drive.google.com/file/d/0B0Xv5bNLGK-keUNLbnhjblhYM3M/view?usp=sharing" target="_blank"><i class="fa fa-file-pdf-o"></i> pdf</a> ]
+      [ <a href="https://drive.google.com/file/d/0B0Xv5bNLGK-kLXZldk9ocjN2a1E/view?usp=sharing" target="_blank"><i class="fa fa-video-camera"></i> 電路影片</a> ]<br>
+      繪圖板
+      [ <a href="https://github.com/TCCinTaiwan/White-Brain" target="_blank"><i class="fa fa-github"></i> White's Brain</a> ]<br>
+      圍棋
+      [ <a href="demo/go/" target="_blank"><i class="fa fa-html5"></i> Go</a> ]<br>
+      直棋
+      [ <a href="demo/morris/" target="_blank"><i class="fa fa-html5"></i> Morris</a> ]<br>
+      貪吃蛇
+      [ <a href="demo/snake/" target="_blank"><i class="fa fa-html5"></i> Snake</a> ]<br>
+      綠水靈
+      [ <a href="demo/slime/" target="_blank"><i class="fa fa-html5"></i> Slime</a> ]<br>
+      菇菇寶貝
+      [ <a href="demo/菇菇寶貝/" target="_blank"><i class="fa fa-html5"></i> 菇菇寶貝</a> ]<br>
+      FTP Client
+      [ <a href="demo/TccFTP.png" target="_blank"><i class="fa fa-photo"></i> TccFTP</a> ]<br>
+      MP3播放器
+      [ <a href="demo/MP3播放器.png" target="_blank"><i class="fa fa-photo"></i> MP3 播放器</a> ]<br>
+      五子棋
+      [ <a href="demo/五子棋.png" target="_blank"><i class="fa fa-photo"></i> 五子棋</a> ]<br>
+      俄羅斯方塊
+      [ <a href="demo/Battle絕對.png" target="_blank"><i class="fa fa-photo"></i> Battle 絕對</a> ]<br>
+      聊天室
+      [ <a href="demo/VaulterEpoch.png" target="_blank"><i class="fa fa-photo"></i> VaulterEpoch</a> ]
+      [ <a href="demo/VaulterEpochServer.png" target="_blank"><i class="fa fa-photo"></i> VaulterEpochServer</a> ]<br>
+      暗棋
+      [ <a href="demo/暗棋無雙.png" target="_blank"><i class="fa fa-photo"></i> 暗棋無雙</a> ]<br>
+      桌面歌詞
+      [ <a href="demo/TcPlayer.png" target="_blank"><i class="fa fa-photo"></i> TcPlayer</a> ]<br>
+      踩地雷
+      [ <a href="demo/步步兢辛.png" target="_blank"><i class="fa fa-photo"></i> 步步兢辛</a> ]<br>
+    </div>
+  </div>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h4><i class="fa fa-thumbs-o-up"></i>自傳(Autobiography)</h4>
+    </div>
+    <div class="panel-body text-primary">
+      <p>我叫陳泰澄，彰化人，生性樂觀、活潑開朗，喜歡從做中學，靈活運用知識，不墨守成規死讀書，只要是對有興趣的，吸收力就非常強。</p>
+      <strong>家庭概況</strong><br>
+      <p class="indent">
+        家中有五人，包含父母親、兩個姊姊和我。父親從事過工程師及導遊，每次要求我們要做到甚麼時，都會以身作則；母親自從生下二姊以後，便開始從事家庭主婦，打點家中大小事；兩個姐姐現在都已經進入社會工作，幫忙支撐家計。</br>
+      </p>
+      <strong>成長及學習過程</strong><br>
+      <p class="indent">
+        小時候，因為家中沒有電視，所以平常休閒時會看看書，可以一整天都在讀同一本書，那時家中有台 Windows 2000 的電腦，常常壞掉，我也就常常自己嘗試著修理、重灌，真的解決不了就會上網發問、跑到書局查閱書籍或去圖書館查相關資料，也因此我對電腦相關的事也就非常有興趣，並對 Visual Basic、C、JAVA、3DS MAX、網頁語法和組合語言也都有特別的興趣，經常會嘗試寫一些別人認為現在能力做不出來的東西。</br>
+        高職時實習成績也還算不錯，曾代表科上參加工科賽，雖說比賽成績不甚理想，覺得有點對不起那些實習成績也不錯的同學，不過也激勵了我努力拚統測。</br>
+      </p>
+      <strong>社團</strong><br>
+      <p class="indent">
+        就讀高職時，我在學校參加了 LEGO 機器人研究社，是社團中的活躍人物，常常下課後就一直待到晚上 10 點、11 點，曾代表學校參加 WRO 校際盃、中區賽、全國賽，皆獲得不錯的成績，最滿意的一次是在 WRO 2012 中區賽以 0.36 秒的成績差距拿下了第二名。</br>
+        大一時期，我開始轉而參加資工系系上活動，繼續向人生中，新一個階段邁進，從一年級開始就積極參加系上活動，更在一下的暑假參加了新生體驗營的活動組，充實了大一升大二的暑假，隔年我則是參加服務組。</br>
+        我直到大三才有參加社團，因為原本沒足夠喜歡的社團，而大三那年我們班有同學開始籌辦資訊研習社，我就毅然加入，成為了傳說中的第零屆社員，之後又陰錯陽差了參加一學期的跑酷社。</br>
+      </p>
+      <strong>班級幹部</strong><br>
+      <p class="indent">
+        在高職時，我擔任了三任副班長，積極處理班上事務。</br>
+        大學則是當了兩任服務股長，一任的衛生股長。</br>
+      </p>
+      <strong>工讀</strong><br>
+      <p class="indent">
+        本人就讀於高雄應用科技大學，資訊工程系，在系辦擔任工讀生，對於份內工作認真負責，也時常善用職務幫忙同學處理一些事務。</br>
+        大二寒假則是去電子材料行打工。</br>
+      </p>
+      <strong>實作</strong><br>
+      <p class="indent">
+        國中升高職時我基於興趣填了資訊科，那時我開始接觸到網頁以外的程式語言，那時候 Facebook 上流行著 Battle(俄羅斯方塊)，我就在高一的時候寫了一個俄羅斯方塊，並參考網路上的方法把它改成了連線板，我也就開始對程式產生了興趣，後來陸陸續續有寫一些程式，像是踩地雷、聊天室、五子棋、FTP客戶端。</br>
+        </br>
+        大二時，參加系上網頁程式設計比賽，很幸運的獲得第一名，其中花最多時間作的是其中的檔案管理系統
+        [ <a href="https://github.com/TCCinTaiwan/file-manager" target="_blank"><i class="fa fa-github"></i> file-manager</a> ]
+        ，利用大一所學的 php 搭配之前寫 Ftp 客戶端的經驗，組合成一個具基本檔案管理的網頁。</br>
+        因為在系辦工讀的原因，隔年被問要不要改寫系網，於是乎我就當了幾個月的系網網管，我最後是以 Wordpress 為底
+        [ <a href="https://github.com/TCCinTaiwan/KUAS_CSIE_Wordpress_Themes_TCC-Department" target="_blank"><i class="fa fa-github"></i> KUAS_CSIE_Wordpress_Themes_TCC-Department</a> ]
+        ，支援語言切換，而在那之前有先用 CodeIgniter 寫過一個先行版
+        [ <a href="https://github.com/TCCinTaiwan/kuas-csie" target="_blank"><i class="fa fa-github"></i> kuas-csie</a> ]
+        ，但基於安全考量，還是決定用 Wordpress。</br>
+        </br>
+        大三上學期後半，和高第一同學合作，做一個用 Arduino 控制的電源插座。</br>
+        [ <a href="https://drive.google.com/file/d/0B0Xv5bNLGK-keUNLbnhjblhYM3M/view?usp=sharing" target="_blank"><i class="fa fa-file-pdf-o"></i> pdf</a> ]
+        [ <a href="https://drive.google.com/file/d/0B0Xv5bNLGK-kLXZldk9ocjN2a1E/view?usp=sharing" target="_blank"><i class="fa fa-video-camera"></i> 電路影片</a> ]</br>
+        寒假結束後我參加資研社兩天的 Hackathon ，用 Python(後台) + Html5 刻一個線上電子白板
+        [ <a href="https://github.com/TCCinTaiwan/White-Brain" target="_blank"><i class="fa fa-github"></i> White-Brain</a> ]
+        ，基本畫線、拉直線、直線預覽、上／下一步等等。</br>
+        </br>
+        大三升大四在學校實習，做了一個網頁版會員訓練系統
+        [ <a href="https://github.com/TCCinTaiwan/TcTube" target="_blank"><i class="fa fa-github"></i> TcTube</a> ]
+        ，主要都在研究 HTML5 影片播放。</br>
+        大四上修 Pygame 期末作業，做了一個倉庫番遊戲
+        [ <a href="https://github.com/TCCinTaiwan/PygameSokoban" target="_blank"><i class="fa fa-github"></i> PygameSokoban</a> ]
+        ，除了一般正常的推箱子，還可以用滑鼠控制。</br>
+        大四下則是在 Android 課程中做了終極井字棋
+        <!-- [ <a href="" target="_blank"><i class="fa fa-github"></i> UltimateTicTacToe</a> ] -->
+        ，而我們採用的勝利條件是用佔領下來的地盤在大的九宮格連成一條線，一局大約 15 分鐘到半小時。</br>
+        而快畢業時，我有接一家同學介紹的花店網站 Case
+        <!-- [ <a href="" target="_blank"><i class="fa fa-github"></i> JKFlower</a> ] -->
+        ，是一般的購物車網站，但我不大會用最後付款取貨的部分。</br>
+        </br>
+        畢業後，在等入伍前我也重構了大一寫的檔案管理系統
+        [ <a href="https://github.com/TCCinTaiwan/TcStorage" target="_blank"><i class="fa fa-github"></i> TcStorage</a> ]
+        ，而當兵時也有被拉去出資訊公差，幫忙灌電腦、拉電話網路線、設定網路等等，多學了一兩招網管技能。</br>
+      </p>
+      <strong>進入社會</strong><br>
+      <p class="indent">
+        當完兵後，很幸運在間隔不久就收到面試邀約，而同時因為當兵前去上的駕訓班，課還沒上完，所以我只能 4 月初才進公司。與此同時，與我同梯的朋友也找我去幫他們家改寫網頁，我試著寫了，但寫起來不大順利，加上開始工作了之後，就只能假日再去做，中途網頁似乎離能用還有些距離，最後採用到的就只有一點點 SEO。至於公司部分，感謝主管，三個月新訓，訓好訓滿，學了一些我在學校根本沒動力碰的技術，像是 Docker、symfony，也更完整的學了一次版控，也比較正式的看了一次 PSR-2。</br>
+      </p>
+    </div>
+  </div>
+  <!-- <div class="panel panel-success">
+    <div class="panel-heading">
+      <h4><i class="fa fa-thumbs-o-up"></i>推薦人(References)</h4>
+    </div>
+    <div class="panel-body text-primary">
+
+    </div>
+  </div> -->
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h4><i class="fa fa-thumbs-o-up"></i>聯絡方式(Contact)</h4>
+    </div>
+    <div class="panel-body text-primary">
+      <i class="fa fa-github"></i> Github: <a href="https://github.com/TCCinTaiwan" target="_blank">TCCinTaiwan</a><br>
+      <i class="fa fa-envelope-o"></i> E-Mail: <a href="mailto:john987john987@gmail.com" target="_blank">john987john987@gmail.com</a><br>
+      <i class="fa fa-phone"></i> Cell Phone: 0978-038-566<br>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="bootstrap/3.3.7/js/bootstrap.js"></script>
+  <script>
+    // 區塊收縮
+    $(".panel-heading").on("click", function(){
+      this.nextElementSibling.hidden = !this.nextElementSibling.hidden;
+    });
+  </script>
+  <!-- <script src="Chart.js/2.6.0/Chart.bundle.js"></script>
+  <script src="Chart.js/2.6.0/Chart.js"></script>
+  <script>
+    var ctx = document.getElementById("myChart");
+    var myRadarChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: [
+          '中文',
+          'English',
+          '日本語',
+          '한국어',
+          '臺語'
+        ],
+        datasets: [{
+          label: "陳泰澄",
+          fill: true,
+          backgroundColor: "rgba(54, 162, 235, 0.2)",
+          borderColor: "rgb(54, 162, 235)",
+          pointBackgroundColor: "rgb(54, 162, 235)",
+          pointBorderColor: "#fff",
+          pointHoverBackgroundColor: "#fff",
+          pointHoverBorderColor: "rgb(54, 162, 235)",
+          data: [
+            75,
+            30,
+            5,
+            3,
+            45
+          ]
+        }]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        title: {
+          display: false,
+          text: '語言能力'
+        },
+        elements: {
+          point: {
+            radius: 5
+          },
+          line: {
+            tension: 0,
+            borderWidth: 2
+          }
+        },
+        scale: {
+          ticks: {
+            beginAtZero: true,
+            steps: 5,
+            stepValue: 20,
+            min: 0,
+            max: 100
+          }
+        },
+      }
+    });
+  </script> -->
 </body>
 </html>
