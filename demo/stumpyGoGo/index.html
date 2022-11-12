@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>木妖王趴趴夠</title>
+    <style>
+        body {
+            background: lightblue;
+        }
+        img {
+            position: fixed;
+        }
+        span {
+            color: red;
+        }
+        .flip-x {
+            filter: FlipH; /* IE only */
+            -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+            -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <img src="stumpy_staying.gif" alt="">
+    <script>
+        function stumpyGoGo() {
+            console.log('木妖王趴趴夠');
+            console.groupCollapsed('木妖王');
+            var stumpy_img = document.getElementsByTagName('img')[0];
+            var map = {
+                left: 0,
+                right: document.getElementsByTagName('body')[0].clientWidth,
+            }
+            var stumpy = {
+                status: 0, // 0 正常移動中 1 被擊退中
+                hp: 1000,
+                x: 0,
+                momentum: 0,
+                move: null,
+                width: stumpy_img.width,
+                image_list: {
+                    moving: new Image,
+                    staying: new Image,
+                    being_hit: new Image
+                }
+            }
+            stumpy.image_list.moving.src = 'stumpy_moving.gif';
+            stumpy.image_list.staying.src = 'stumpy_staying.gif';
+            stumpy.image_list.being_hit.src = 'stumpy_being_hit.png';
+            window.onresize = function(event) {
+                if (map.right !== document.getElementsByTagName('body')[0].clientWidth) {
+                    map.right = document.getElementsByTagName('body')[0].clientWidth;
+                    console.log('地圖寬度：', map.right);
+                }
+            };
+            stumpy_img.onload = function(event) {
+                if (stumpy.width !== stumpy_img.width) {
+                    stumpy.width = stumpy_img.width;
+                    console.log('木妖王寬度：', map.right);
+                }
+            };
+            var stop_crying = function(new_status, new_src) {
+                if (new_status === undefined) {
+                    new_status = 0;
+                }
+                if (new_src === undefined) {
+                    new_src = stumpy.image_list.moving.src;
+                }
+                stumpy.status = new_status;
+                stumpy_img.src = new_src;
+                setTimeout(oneDirection, 1000);
+            }
+            stumpy_img.onmousedown = function(evt) {
+                if (stumpy.status === 0) {
+                    stumpy.hp -= Math.round(Math.random() * 10);
+                    console.log('木妖王血量：', stumpy.hp);
+                    if (stumpy.hp <= 0) {
+                        console.log('木妖王死了!!');
+                        stumpy.hp = 1000;
+                    }
+                    stumpy.status = 1;
+                    stumpy_img.src = stumpy.image_list.being_hit.src;
+                    stumpy.x += stumpy_img.classList.contains('flip-x') ? -20 : 20;
+                    stumpy.momentum = 0;
+                    setTimeout(function() {
+                        stop_crying(0, stumpy.image_list.staying.src);
+                    }, 300);
+                }
+            };
+            stumpy.move = function () {
+                stumpy.x += stumpy.momentum;
+                if (stumpy.x < map.left) stumpy.x = map.left;
+                if (stumpy.x + stumpy.width > map.right) stumpy.x = map.right - stumpy.width;
+                stumpy_img.style.left = stumpy.x.toString() + 'px';
+            }
+            var oneDirection = function (change_direction_frequency) {
+                if (change_direction_frequency === undefined) {
+                    // 預設 1 ~ 0.8 為 1
+                    // 預設 0.6 ~ 0.4 為 0
+                    // 預設 0.2 ~ 0 為 -1
+                    change_direction_frequency = 0.6;
+                }
+                var seed = Math.random();
+                var temp_momentum = stumpy.momentum;
+                if ((seed > (1 - change_direction_frequency / 3)) && stumpy.momentum !== 1) {
+                    stumpy.momentum = 1;
+                    stumpy_img.classList.add('flip-x');
+                    stumpy_img.src = stumpy.image_list.moving.src;
+                } else if ((seed < (change_direction_frequency / 3)) && stumpy.momentum !== -1) {
+                    stumpy.momentum = -1;
+                    stumpy_img.classList.remove('flip-x');
+                    stumpy_img.src = stumpy.image_list.moving.src;
+                } else if ((((seed - 0.5) ^ 2) < (change_direction_frequency ^ 2 / 9)) && stumpy.momentum !== 0) {
+                    stumpy.momentum = 0;
+                    stumpy_img.src = stumpy.image_list.staying.src;
+                }
+                if (temp_momentum !== stumpy.momentum) {
+                    console.log('木妖王動量：', stumpy.momentum);
+                }
+
+                // 呼叫 Resize 一次確保寬度正常
+                window.onresize();
+            }
+            var moveInterval = setInterval(stumpy.move, 5);
+            var oneDirectionInterval = setInterval(oneDirection, 2000);
+        }
+        document.addEventListener('DOMContentLoaded', stumpyGoGo, false);
+    </script>
+</body>
+</html>
