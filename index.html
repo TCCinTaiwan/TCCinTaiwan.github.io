@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant-TW">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -204,16 +204,6 @@
     }
   </style>
   <script>
-    function getAge(dateString) {
-      var today = new Date();
-      var birthDate = new Date(dateString);
-      var age = today.getFullYear() - birthDate.getFullYear();
-      var m = today.getMonth() - birthDate.getMonth();
-      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-      }
-      return age;
-    }
     function lastModified() {
       var lastModifiedArray = document.lastModified.split(" ")[0].split("/");
       return lastModifiedArray[2] + "年" + lastModifiedArray[0] + "月" + lastModifiedArray[1] + "日"
@@ -230,11 +220,12 @@
       <h4><i class="fa fa-info-circle fa-1x"></i>基本資料(Profile)</h4>
     </div>
     <div class="panel-body text-primary">
-      名字(Name)： 陳泰澄(Tai-Cheng Chen)<a href="photo.jpg" target="_blank"><img src="photo.jpg" alt="TCC" class="photo"></a><br>
-      年次(Years): 1995 年<script>document.write("(" + getAge("1995-03-02") + " 歲)");</script><br>
+      我是 TCC，自小便對電腦系統深深著迷，透過多方學習將所學轉變為淺顯易懂的形式，並實際應用到生活當中。 <br>
+      I'm TCC, I like to absorb diverse knowledge and apply it to real life through simple and easy-to-understand methods.<br>
+      <br>
+      名字(Name)： 陳泰澄<a href="photo.jpg" target="_blank"><img src="photo.jpg" alt="TCC" class="photo"></a><br>
+      年次(Years): 1995 年<br>
       性別(Gender): 男生 ♂<br>
-      身高(Height): 164 cm<br>
-      體重(Weight): 55 kg<br>
       兵役(Military): 役畢<br>
     </div>
   </div>
